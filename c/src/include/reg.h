@@ -43,7 +43,9 @@ typedef struct {
     uint32_t N    : 1; // negative/less than bit
 } s_cpsr;
 
-uint32_t registers[COUNT];
+// making this global accross the project
+// will be initialized in main.c
+extern uint32_t registers[COUNT];
 
 
 #endif /* REG_H */
