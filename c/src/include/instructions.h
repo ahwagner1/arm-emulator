@@ -116,6 +116,38 @@ typedef enum {
 } e_instructions;
 
 uint8_t extract_condition_field(uint32_t instruction);
-e_instructions determine_instruction(uint32_t instruction);
+void determine_instruction(uint32_t instruction);
+
+/*
+    instruction functions
+    data_processing branchs into data_processing specific instructions
+*/
+void single_data_swap(uint32_t instruction);
+void multiply(uint32_t instruction);
+void data_processing(uint32_t instruction); 
+void single_data_transfer(uint32_t instruction);
+void block_data_transfer(uint32_t instruction);
+void branch(uint32_t instruction);
+void coproc_data_transfer(uint32_t instruction);
+void coproc_data_op(uint32_t instruction);
+void interrupt();
+
+// data processing instructions
+void and(uint32_t instruction);
+void xor(uint32_t instruction);
+void sub(uint32_t instruction);
+void rsb(uint32_t instruction);
+void add(uint32_t instruction);
+void adc(uint32_t instruction);
+void sbc(uint32_t instruction);
+void rsc(uint32_t instruction);
+void tst(uint32_t instruction);
+void teq(uint32_t instruction);
+void cmp(uint32_t instruction);
+void cmn(uint32_t instruction);
+void orr(uint32_t instruction);
+void mov(uint32_t instruction);
+void vic(uint32_t instruction);
+void mnv(uint32_t instruction);
 
 #endif /* INSTRUCTION_H */
