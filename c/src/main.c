@@ -4,7 +4,9 @@
 
 //https://iitd-plos.github.io/col718/ref/arm-instructionset.pdf
 int main(void) {
+    // init memory and registers
     uint32_t *memory = init_memory();
+    uint32_t registers[COUNT] = {0};
     
     // set the initial condition starting point in memory
     registers[PC] = 0x3000;
