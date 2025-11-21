@@ -20,7 +20,8 @@ typedef enum {
     SP,
     LR,
     PC,
-    CPSR
+    CPSR,
+    COUNT // not real register, just fancy way to setup the register array
 } e_register;
 
 typedef struct {
@@ -41,6 +42,8 @@ typedef struct {
     uint32_t Z    : 1; // zero bit
     uint32_t N    : 1; // negative/less than bit
 } s_cpsr;
+
+uint32_t registers[COUNT];
 
 
 #endif /* REG_H */
