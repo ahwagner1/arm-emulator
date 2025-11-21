@@ -2,6 +2,7 @@
 #define INSTRUCTION_H
 
 /*
+    https://developer.arm.com/documentation/ddi0027/d/?lang=en
     Need to rethink how this is structured, in ARM7 only data processing instructions
     contain traditional set opcodes. Everything else has it's own opcode, but those are
     variable in length. One thing that is constant are the condition fields. Bits 31:28 
@@ -34,6 +35,7 @@
     if 27:24 == 0b1111 this signifies a software interrupt
 */
 
+// page 29
 typedef enum {
     AND = 0,
     EOR,
@@ -52,6 +54,26 @@ typedef enum {
     BIC,
     MNV
 } e_data_processing_opcodes;
+
+// page 26
+typedef enum {
+    EQ = 0,
+    NE,
+    CS,
+    CC,
+    MI,
+    PL,
+    VS,
+    VC,
+    HI,
+    LS,
+    GE,
+    LT,
+    GT,
+    LE,
+    AL,
+    NV
+} e_condition_field_codes;
 
 // need to redo this to match up the correct op code values
 // for example AND == 0b000
